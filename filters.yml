@@ -1,5 +1,5 @@
 ---
-# Eucalyptus NC log filters
+# Eucalyptus log filters.
 messages: eucalyptus
 items:
     - line: libvirt_err_handler

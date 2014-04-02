@@ -5,13 +5,16 @@ This repo contains a simple flat text file containing useful Eucalypus log messa
 
 The file follows a YAML syntax but you could always run this through something else if you want (maybe even convert via http://yaml-online-parser.appspot.com) via pyaml or such.
 
-Each item has a number of keys:
+Each item has a number of keys, for example:
 
     - line: libvirt_err_handler
       description: a libvirt-related error has occured on a node
       log: nc.log
       type: error
       component: nc
+    
+explained as:
+      
 key | value
 ---- | -----
 line |   this is the string to match in the Eucalyptus log file

@@ -1,0 +1,114 @@
+---
+# Eucalyptus NC log filters
+messages: eucalyptus
+items:
+    - line: libvirt_err_handler
+      description: a libvirt-related error has occured on a node
+      log: nc.log
+      type: error
+      component: nc
+    - line: child process failed to connect to hypervisor
+      description: a problem has occured with hypervisor communication
+      log: nc.log
+      type: error
+      component: nc
+    - line: hooks prevented check on the hypervisor
+      description: a problem has occured with hypervisor communication
+      log: nc.log
+      type: error
+      component: nc
+    - line: invoked (publicIp=0.0.0.0)
+      description: an instance has lost a public ip
+      log: nc.log
+      type: error
+      component: nc
+    - line: bad return from ncDescribeResource 
+      description: a node is unreachable by the CC
+      log: cc.log
+      type: error
+      component: cc
+    - line: cannot get network ground truth from CLC 
+      description: cc is unable to obtain network state from the clc
+      log: cc.log
+      type: error
+      component: cc
+    - line: scheduler decided to run instance
+      description: an instance placement and launch is occuring 
+      log: cc.log
+      type: event
+      component: cc
+    - line: starting network
+      description: a security group is being constructed
+      log: cc.log
+      type: event
+      component: cc
+    - line: assigning address
+      description: an ip address has been assigned to an instance
+      log: cc.log
+      type: event
+      component: cc
+    - line: Could not open connection
+      description: component unable to open a connection to the database
+      log: cloud-output.log
+      type: error
+      component: java
+    - line: Couldn't get connection because we are at maximum connection count
+      description: db connection pool limit has been reached
+      log: cloud-output.log
+      type: error
+      component: java
+    - line: Failed to restore instance
+      description: instance restore has failed for some reason
+      log: cloud-output.log
+      type: error
+      component: clc
+    - line: PENDING -> RUNNING
+      description: instance state has moved from pending to running as part of an instance launch
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: SHUTTING_DOWN -> TERMINATED
+      description: instance has moved to terminated after a terminate/shutdown action
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: Denied resource access
+      description: access to some resource was denied by resource or IAM permissions
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: AddressTransition unallocating:allocated->unallocated
+      description: a public ip or elastic ip has been released
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: AddressTransition allocating:unallocated->allocated
+      description: a public ip or elastic ip has been allocated
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: AddressTransition assigning:allocated->assigned
+      description: a public ip or elastic ip has been assigned to an instance
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: AddressTransition unassigning:assigned->allocated
+      description: a public ip or elastic ip has been disassociated from an instance
+      log: cloud-output.log
+      type: event
+      component: clc
+    - line: CreateStorageVolume
+      description: an ebs volume is being created
+      log: cloud-output.log
+      type: event
+      component: sc
+    - line: DeleteStorageVolume
+      description: en ebs volume is being deleted
+      log: cloud-output.log
+      type: event
+      component: sc
+comments: >
+    The items key contains a list of each log messages with corresponding list of details. 
+    The premise behind this is that info can be programmatically pulled from this file.
+    Place each messages in a filter based on component and location (log file).
+...

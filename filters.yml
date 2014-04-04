@@ -22,6 +22,16 @@ items:
       log: nc.log
       type: error
       component: nc
+    - line: Too many open files
+      description: failure to implement instance artifacts on node controller
+      log: nc.log
+      type: error
+      component: nc
+    - line: failed to remove some artifacts
+      description: failure to cleanup instance artifacts on node controller
+      log: nc.log
+      type: error
+      component: nc
     - line: bad return from ncDescribeResource 
       description: a node is unreachable by the CC
       log: cc.log

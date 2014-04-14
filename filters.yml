@@ -32,6 +32,11 @@ items:
       log: nc.log
       type: error
       component: nc
+    - line: Too many open files
+      description: failure to create an instance artifact due to ulimit or blobstore limit
+      log: nc.log
+      type: error
+      component: nc
     - line: cannot tune file system
       description: failure to construct instance backing on node controller
       log: nc.log
